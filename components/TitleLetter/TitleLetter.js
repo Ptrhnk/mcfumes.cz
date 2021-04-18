@@ -9,11 +9,11 @@ const StyledLetter = styled(animated.h2)`
   letter-spacing: 1.5px;
   transition: opacity 70ms;
 
-  @media (max-height: 900px) {
-    font-size: 2.5rem;
+  @media (max-height: 700px) {
+    font-size: 3rem;
   }
   @media (max-height: 500px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 

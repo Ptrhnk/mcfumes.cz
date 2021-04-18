@@ -9,15 +9,15 @@ const Title = styled.h1`
 `;
 const StyledTitleBox = styled.div`
   margin-top: 4rem;
-  @media (max-width: 900px) {
+  /* @media (max-width: 900px) {
     margin-top: 3.5rem;
-  }
-  @media (max-height: 500px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 700px) {
+  } */
+  /* @media (max-height: 500px) {
+    font-size: 2.2rem;
+  } */
+  /* @media (max-width: 700px) {
     font-size: 2.5rem;
-  }
+  } */
 `;
 
 export const TitleBox = ({ text }) => {
