@@ -9,12 +9,21 @@ const Title = styled.h1`
 `;
 const StyledTitleBox = styled.div`
   margin-top: 4rem;
+  @media (max-width: 900px) {
+    margin-top: 3.5rem;
+  }
+  @media (max-height: 500px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const TitleBox = ({ text }) => {
   const [flipArr, setFlipArr] = useState(Array(text.length).fill(true));
 
-  useEffect(() => void setInterval(() => flash(), 180), []);
+  useEffect(() => void setInterval(() => flash(), 170), []);
 
   const flash = () => {
     const index = Math.floor(Math.random() * flipArr.length);
@@ -25,7 +34,7 @@ export const TitleBox = ({ text }) => {
         flipArr[index] = true;
         setFlipArr(flipArr.slice());
       }, Math.floor(Math.random() * 10 + 30));
-    }, Math.floor(Math.random() * 200 + 1500));
+    }, Math.floor(Math.random() * 400 + 1400));
   };
 
   return (

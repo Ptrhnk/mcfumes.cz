@@ -12,14 +12,6 @@ const ImageBox = styled.div`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* @media (max-width: 900px) {
-    width: 3rem;
-    height: 1.4rem;
-    margin: 0 0 0 1rem;
-  } */
-  /* @media (max-width: 700px) {
-  } */
 `;
 
 export const LogoBox = ({ image }) => {

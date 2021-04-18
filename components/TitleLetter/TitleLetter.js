@@ -8,6 +8,13 @@ const StyledLetter = styled(animated.h2)`
   font-size: 3.5rem;
   letter-spacing: 1.5px;
   transition: opacity 70ms;
+
+  @media (max-height: 900px) {
+    font-size: 2.5rem;
+  }
+  @media (max-height: 500px) {
+    font-size: 2rem;
+  }
 `;
 
 export const TitleLetter = ({ letter, isOn }) => {
