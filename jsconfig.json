@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "checkJs": true,
+    "target": "esnext",
+    "jsx": "react",
+    "module": "commonjs"
+  }
+}

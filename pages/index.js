@@ -1,18 +1,34 @@
+import React from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styled from "styled-components";
 
+import { LogoBox, TitleBox } from "components";
+
+const Container = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+`;
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <title>MC Fumes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img
-        src={require("../public/assets/img/defumezlogo.jpeg")}
+      {/* <img
+        src={require("../public/img/defumezlogo.jpeg")}
         style={{ width: "350px" }}
-      />
-      <h1 className={styles.title}>Coming soon...</h1>
-    </div>
+      /> */}
+      <LogoBox image={require("../public/img/defumezlogo.jpeg")} />
+      <TitleBox text="Coming soon..." />
+    </Container>
   );
 }
