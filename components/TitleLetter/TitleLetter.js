@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useSpring, config, animated } from "react-spring";
 
 const StyledLetter = styled(animated.h2)`
-  opacity: ${({ show }) => (show ? "1" : "0")};
+  opacity: ${({ $show }) => ($show ? "1" : "0")};
   min-width: 1rem;
   font-size: 3.5rem;
   letter-spacing: 1.5px;
@@ -27,5 +27,5 @@ export const TitleLetter = ({ letter, isOn }) => {
     opacity: isOn ? "1" : "0",
   });
 
-  return <StyledLetter show={isOn}>{letter}</StyledLetter>;
+  return <StyledLetter $show={isOn}>{letter}</StyledLetter>;
 };
