@@ -16,15 +16,14 @@ const StyledLetter = styled(animated.h2)`
     font-size: 2.5rem;
   }
 `;
-
 export const TitleLetter = ({ letter, isOn }) => {
   const strobeAnim = useSpring({
     config: {
       tension: 250,
       friction: 20,
-      mass: 1,
+      mass: 1
     },
-    opacity: isOn ? "1" : "0",
+    opacity: isOn ? "1" : "0"
   });
 
   return <StyledLetter $show={isOn}>{letter}</StyledLetter>;
