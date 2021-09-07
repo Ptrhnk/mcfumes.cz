@@ -1,32 +1,34 @@
 import React from "react";
-
 import styled from "styled-components";
 
 const StyledTitle = styled.h1`
   color: white;
   letter-spacing: 2rem;
-  font-size: 4rem;
-  margin: 3rem 0;
+  font-size: 5rem;
   font-weight: normal;
   width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
+  @media (max-width: 900px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 3rem;
+  }
 `;
-
 const PageContainer = styled.div`
-  position: fixed;
+  position: absolute;
   min-height: 100vh;
   width: 100%;
-  background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 3%;
+  padding: 3rem 3% 4.2rem 3%;
   overflow: auto;
   @media (max-width: 900px) {
     padding: 0 6%;
-    position: absolute;
   }
   @media (max-width: 700px) {
     padding: 0 9%;
@@ -34,24 +36,35 @@ const PageContainer = styled.div`
 `;
 const StyledContent = styled.div`
   flex-direction: column;
-  margin-bottom: 5rem;
-`;
-const StyledParagraph = styled.p`
-  font-size: 1.6rem;
-  text-indent: 3rem;
-  margin-bottom: 2rem;
-  letter-spacing: 5px;
-`;
-const StyledDonor = styled.p`
-  font-size: 1.6rem;
-  letter-spacing: 5px;
+  width: 90%;
+  line-height: 1.8;
+  @media (min-width: 1280px) {
+    width: 110rem;
+  }
 `;
 const StyledHeading = styled.h2`
-  letter-spacing: 1px;
-  font-size: 1.9rem;
-  text-decoration: underline;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+  line-height: 1.6;
   margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
 `;
+const StyledParagraph = styled.p`
+  font-size: 1.8rem;
+  text-indent: 6rem;
+  margin-bottom: 2.7rem;
+  letter-spacing: 5px;
+`;
+const StyledDonor = styled.li`
+  font-size: 1.8rem;
+  letter-spacing: 5px;
+  padding-left: 1rem;
+  margin-left: 1.8rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.8;
+`;
+
 const Credits = ({}) => {
   return (
     <PageContainer>
@@ -65,8 +78,9 @@ const Credits = ({}) => {
           Sokolovski z Risto sound studia.
         </StyledParagraph>
         <StyledHeading>
-          Lidé, se kterými jsem toto dílo stvořil - bez jejichž energie by bylo
-          nemyslitelné, aby něco vůbec vzniklo:
+          Lidé, se kterými jsem toto dílo stvořil,
+          <br />
+          bez jejichž energie by bylo nemyslitelné, aby něco vůbec vzniklo:
         </StyledHeading>
         <StyledParagraph>
           Karel Štulo, Michal Kolouch Daněk, Lang Biank, Ondřej Hauser, Jan
@@ -78,17 +92,21 @@ const Credits = ({}) => {
         <StyledHeading>
           Obrovský dík a vděčnost patří dárcům, kteří přispěli:
         </StyledHeading>
-        <StyledDonor>
-          - Nadace města Letovice- poskytnutí grantu ve výši 30 000,- Kč
-        </StyledDonor>
-        <StyledDonor>
-          - Rada města Letovice za poskytnutí daru ve výši 10 000,- Kč
-        </StyledDonor>
-        <StyledDonor>
-          - Dále mým rodinným příslušníkům a nejbližším známým, kteří přispěli
-          buď přímo nebo prostřednictvím serveru donio, jejichž seznam zveřejním
-          po 30.11.2021
-        </StyledDonor>
+        <ul>
+          <StyledDonor>
+            Nadace města Letovice- poskytnutí grantu ve výši 30 000,- Kč
+          </StyledDonor>
+          <StyledDonor>
+            Rada města Letovice za poskytnutí daru ve výši 10 000,- Kč
+          </StyledDonor>
+          <StyledDonor>
+            Dále mým rodinným příslušníkům a nejbližším známým, kteří přispěli
+            buď přímo
+            <br />
+            nebo prostřednictvím serveru donio, jejichž seznam zveřejním po
+            30.11.2021
+          </StyledDonor>
+        </ul>
       </StyledContent>
     </PageContainer>
   );

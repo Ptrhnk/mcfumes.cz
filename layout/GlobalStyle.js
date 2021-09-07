@@ -8,7 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     
   }
   body {
-    
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    background-color: black;
+
     @font-face {
       font-family: "GoBold";
       src: url("${require("../public/fonts/gobold/Gobold_Bold.otf")}") format("opentype");
@@ -24,10 +27,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "GoBold", sans-serif;
     font-weight: normal;
     font-style: normal;
-
-    letter-spacing: 1px;
-    box-sizing: border-box;
-    background-color: black;
   }
   *, *::after, *::before {
     margin: 0;
