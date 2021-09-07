@@ -6,7 +6,8 @@
     "dev": "npm run open-browser && next dev -p 3003",
     "open-browser": "open http://localhost:3003",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "10.1.3",

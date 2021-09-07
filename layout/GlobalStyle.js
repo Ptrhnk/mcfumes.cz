@@ -4,8 +4,11 @@ export const GlobalStyle = createGlobalStyle`
   html {
     scroll-behavior: smooth;
     font-size: 62.5%;
+    line-height: 1.5;
+    
   }
   body {
+    
     @font-face {
       font-family: "GoBold";
       src: url("${require("../public/fonts/gobold/Gobold_Bold.otf")}") format("opentype");
