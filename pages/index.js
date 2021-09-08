@@ -8,7 +8,7 @@ const PageContainer = styled.div`
   position: fixed;
   height: 100vh;
   width: 100%;
-  background-color: black;
+  /* background-color: black; */
   color: white;
   display: flex;
   flex-direction: column;
