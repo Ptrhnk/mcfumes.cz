@@ -65,7 +65,7 @@ export const AudioControllPanel = ({
   } = useAudioPlayer({
     src: audioFile.path,
     format: ["mp3"],
-    autoplay: false,
+    autoplay: true,
     onend: () => {
       onNext();
     }
@@ -87,15 +87,21 @@ export const AudioControllPanel = ({
         <StyledIconButton onClick={() => onPrevious()}>
           <BsSkipStartFill size={21} />
         </StyledIconButton>
-        <StyledIconButton onClick={togglePlayPause}>
-          {!ready && !error && loading ? (
-            <ClipLoader color={"white"} size={34} />
-          ) : playing ? (
-            <AiOutlinePauseCircle size={34} />
-          ) : (
-            <AiOutlinePlayCircle size={34} />
-          )}
-        </StyledIconButton>
+        {!ready && !error && loading ? (
+          <ClipLoader color={"white"} size={34} />
+        ) : playing ? (
+          <AiOutlinePauseCircle
+            style={{ cursor: "pointer" }}
+            size={34}
+            onClick={togglePlayPause}
+          />
+        ) : (
+          <AiOutlinePlayCircle
+            style={{ cursor: "pointer" }}
+            size={34}
+            onClick={togglePlayPause}
+          />
+        )}
         <StyledIconButton onClick={() => onNext()}>
           <BsSkipEndFill size={21} />
         </StyledIconButton>

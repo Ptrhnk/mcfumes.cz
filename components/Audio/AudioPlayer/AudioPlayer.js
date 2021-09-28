@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { AudioControllPanel } from "components";
 
 const StyledPlayerWrap = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
 `;
@@ -28,6 +28,7 @@ const tracklist = [
 ];
 
 export const AudioPlayer = ({}) => {
+  const [playerInitialized, setPlayerInitialized] = useState(false);
   const [playerOpen, setPlayerOpen] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
 
@@ -44,18 +45,29 @@ export const AudioPlayer = ({}) => {
 
   return (
     <StyledPlayerWrap>
-      {playerOpen ? (
+      {playerInitialized ? (
         <AudioPlayerProvider>
-          <AudioControllPanel
-            onClose={() => setPlayerOpen(false)}
-            audioFile={tracklist[currentTrack]}
-            onNext={setNextTrack}
-            onPrevious={setPreviousTrack}
-          />
+          {playerOpen ? (
+            <AudioControllPanel
+              onClose={() => setPlayerOpen(false)}
+              audioFile={tracklist[currentTrack]}
+              onNext={setNextTrack}
+              onPrevious={setPreviousTrack}
+            />
+          ) : (
+            <StyledBsFillMusicPlayerFill
+              onClick={() => setPlayerOpen(true)}
+              size={50}
+              color={"white"}
+            />
+          )}
         </AudioPlayerProvider>
       ) : (
         <StyledBsFillMusicPlayerFill
-          onClick={() => setPlayerOpen(true)}
+          onClick={() => {
+            setPlayerInitialized(true);
+            setPlayerOpen(true);
+          }}
           size={50}
           color={"white"}
         />
