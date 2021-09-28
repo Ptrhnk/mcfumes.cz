@@ -16,7 +16,7 @@ const StyledAudioPanel = styled.div`
   background-color: rgba(20, 20, 20, 1);
   border-top-left-radius: 1rem;
   height: 12rem;
-  width: 18rem;
+  width: 20rem;
   padding: 1.5rem;
 `;
 const StyledBox = styled.div`
@@ -30,6 +30,7 @@ const StyledTrackTitle = styled.div`
   margin-bottom: 1.4rem;
   text-align: center;
   line-height: 1.4;
+  padding: 0 0.2rem;
 `;
 const StyledIconButton = styled.button`
   background: none;
@@ -84,7 +85,10 @@ export const AudioControllPanel = ({
         <StyledTrackTitle>{audioFile.name}</StyledTrackTitle>
       </StyledBox>
       <StyledBox>
-        <StyledIconButton onClick={() => onPrevious()}>
+        <StyledIconButton
+          disabled={!ready && !error && loading}
+          onClick={() => onPrevious()}
+        >
           <BsSkipStartFill size={21} />
         </StyledIconButton>
         {!ready && !error && loading ? (
@@ -102,7 +106,10 @@ export const AudioControllPanel = ({
             onClick={togglePlayPause}
           />
         )}
-        <StyledIconButton onClick={() => onNext()}>
+        <StyledIconButton
+          disabled={!ready && !error && loading}
+          onClick={() => onNext()}
+        >
           <BsSkipEndFill size={21} />
         </StyledIconButton>
       </StyledBox>
