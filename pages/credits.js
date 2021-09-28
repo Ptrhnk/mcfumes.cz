@@ -1,3 +1,4 @@
+import { AudioPlayer } from "components";
 import React from "react";
 import styled from "styled-components";
 
@@ -125,6 +126,7 @@ const Credits = ({}) => {
           </StyledDonor>
         </ul>
       </StyledContent>
+      <AudioPlayer />
     </PageContainer>
   );
 };
