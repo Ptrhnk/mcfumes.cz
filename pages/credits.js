@@ -90,8 +90,8 @@ const Credits = ({}) => {
       <StyledTitle>Credits</StyledTitle>
       <StyledContent>
         <StyledParagraph>
-          Natáčení alba probíhalo mezi lety 2019&nbsp;- 2021 v různých místech a
-          hudebních studiích (Beep, Havas, Sound Device, Meet Factory, ve
+          Natáčení alba probíhalo mezi lety 2019&nbsp;- 2021 na různých místech
+          a hudebních studiích (Beep, Havas, Sound Device, Meet Factory, ve
           zkušebně Prago Union, u mě doma v zálomu, etc. O&nbsp;smíchání alba se
           postaral Tomáš Sochůrek ze studia Jižák a stem mastering provedl Risto
           Sokolovski z Risto sound studia.
@@ -113,7 +113,7 @@ const Credits = ({}) => {
         </StyledHeading>
         <ul>
           <StyledDonor>
-            Nadace města Letovice- poskytnutí grantu ve výši
+            Nadace města Letovice - poskytnutí grantu ve výši
             30&nbsp;000,-&nbsp;Kč
           </StyledDonor>
           <StyledDonor>
