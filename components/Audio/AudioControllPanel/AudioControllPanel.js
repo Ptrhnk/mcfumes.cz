@@ -16,7 +16,7 @@ const StyledAudioPanel = styled.div`
   background-color: rgba(20, 20, 20, 1);
   border-top-left-radius: 1rem;
   height: 12rem;
-  width: 20rem;
+  width: 18rem;
   padding: 1.5rem;
 `;
 const StyledBox = styled.div`
