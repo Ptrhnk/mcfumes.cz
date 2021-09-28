@@ -8,17 +8,22 @@ export const GlobalStyle = createGlobalStyle`
   body {
     @font-face {
       font-family: "GoBold";
-      src: url("${require("../public/fonts/gobold/Gobold_Bold.otf")}") format("opentype");
+      src: url("${
+        require("../public/fonts/gobold/Gobold_Bold.otf").default
+      }") format("opentype");
       font-style: normal;
       font-weight: bold;
     }
     @font-face {
       font-family: "GoBold";
-      src: url("${require("../public/fonts/gobold/Gobold_Regular.otf")}") format("opentype");
+      src: url("${
+        require("../public/fonts/gobold/Gobold_Regular.otf").default
+      }") format("opentype");
       font-style: normal;
       font-weight: normal;
     }
-    font-family: "GoBold", sans-serif;
+    /* font-family: "GoBold", sans-serif; */
+    font-family: "Roboto", sans-serif;
     font-weight: normal;
     font-style: normal;
 

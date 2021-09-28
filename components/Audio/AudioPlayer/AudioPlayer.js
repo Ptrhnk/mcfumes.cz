@@ -1,22 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useAudioPlayer } from "react-use-audio-player";
 import { AiOutlinePlayCircle, AiOutlinePauseCircle } from "react-icons/ai";
-import {
-  IoPlaySkipBackCircleOutline,
-  IoPlaySkipForwardCircleOutline
-} from "react-icons/io5";
 
-import { VscLoading } from "react-icons/vsc";
 import { BsSkipEndFill, BsSkipStartFill } from "react-icons/bs";
-import { FiSkipBack, FiSkipForward } from "react-icons/fi";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const tracklist = [
   { path: "/songs/nlb/01_intro.mp3", name: "Intro" },
   { path: "/songs/nlb/02_linka.mp3", name: "Linka" },
   { path: "/songs/nlb/03_meka.mp3", name: "Meka" },
   { path: "/songs/nlb/04_drdol.mp3", name: "Drdol" },
-  { path: "/songs/nlb/05_korporat.mp3", name: "Korporat" },
+  { path: "/songs/nlb/05_korporat.mp3", name: "Korporát" },
   { path: "/songs/nlb/06_cz_rap.mp3", name: "ČS rap" },
   { path: "/songs/nlb/07_nlb.mp3", name: "Nesnesitelná Lehkost Beatů" },
   { path: "/songs/nlb/08_rapy_a_pravda.mp3", name: "Rapy a Pravda" },
@@ -24,17 +19,13 @@ const tracklist = [
   { path: "/songs/nlb/10_outro.mp3", name: "Outro" }
 ];
 const StyledAudioPanel = styled.div`
-  position: absolute;
-  bottom: 0;
-  /* left: 0; */
-  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(50, 50, 50, 0.5);
   border-top-left-radius: 1rem;
-  /* height: 10rem; */
+  height: 22rem;
   width: 30rem;
   padding: 1.5rem;
 `;
@@ -46,9 +37,10 @@ const StyledBox = styled.div`
 const StyledTrackTitle = styled.div`
   font-size: 1.6rem;
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 `;
 const StyledIconButton = styled.button`
+  position: relative;
   background: none;
   color: white;
   border: none;
@@ -56,29 +48,38 @@ const StyledIconButton = styled.button`
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  padding: 0 0.3rem;
+  padding: 0 0.4rem;
+  /* transition: transform 100ms ease-out;
+
+  :hover {
+    transform: scale(1.05);
+  } */
 `;
 export const AudioPlayer = () => {
   const [currentTrack, setCurrentTrack] = useState(0);
 
-  const { togglePlayPause, ready, loading, playing, error, volume, play } =
+  const { togglePlayPause, ready, loading, playing, error, volume, player } =
     useAudioPlayer({
       src: tracklist[currentTrack].path,
       format: ["mp3"],
-      autoplay: false
+      autoplay: false,
+      onend: () => {
+        setNextTrack();
+        // player.play();
+      }
     });
 
   const setNextTrack = () => {
     currentTrack < tracklist.length - 1
       ? setCurrentTrack(currentTrack + 1)
       : setCurrentTrack(0);
-    play();
+    // player.play();
   };
   const setPreviousTrack = () => {
     currentTrack > 0
       ? setCurrentTrack(currentTrack - 1)
       : setCurrentTrack(tracklist.length - 1);
-    play();
+    // player.play();
   };
 
   return (
@@ -88,19 +89,19 @@ export const AudioPlayer = () => {
       </StyledBox>
       <StyledBox>
         <StyledIconButton onClick={() => setPreviousTrack()}>
-          <BsSkipStartFill size={22} />
+          <BsSkipStartFill size={21} />
         </StyledIconButton>
         <StyledIconButton onClick={togglePlayPause}>
           {!ready && !error && loading ? (
-            <VscLoading size={36} />
+            <ClipLoader color={"white"} size={34} />
           ) : playing ? (
-            <AiOutlinePauseCircle size={36} />
+            <AiOutlinePauseCircle size={34} />
           ) : (
-            <AiOutlinePlayCircle size={36} />
+            <AiOutlinePlayCircle size={34} />
           )}
         </StyledIconButton>
         <StyledIconButton onClick={() => setNextTrack()}>
-          <BsSkipEndFill size={22} />
+          <BsSkipEndFill size={21} />
         </StyledIconButton>
       </StyledBox>
     </StyledAudioPanel>
