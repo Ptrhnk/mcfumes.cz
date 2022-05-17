@@ -12,6 +12,17 @@ const LogoLayersContainer = styled.div`
   /* border: 1px dashed white; */
 `;
 
+const StyledHeadingBox = styled.div`
+  position: absolute;
+  background-image: ${({ image }) => (image ? `url(${image})` : "none")};
+  width: 100%;
+  height: 20rem;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
 export const LogoLayers = ({}) => {
   const [flipArr, setFlipArr] = useState(Array(4).fill(true));
 
@@ -36,6 +47,7 @@ export const LogoLayers = ({}) => {
       <LogoBox
         image={require("../../public/img/logo-layers/BackgroundFront.png")}
       /> */}
+      <StyledHeadingBox image={require("../../public/img/NameHeading.png")} />
       <LogoBox
         image={require("../../public/img/logo-layers/LayerHandBlue.png")}
         isOn={flipArr[0]}
