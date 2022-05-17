@@ -14,19 +14,18 @@ const ImageBox = styled(animated.div)`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: ${({ lowOpacity }) => (lowOpacity ? 0.5 : 1)};
   /* margin-top: -5rem; */
 `;
 
-export const LogoBox = ({ image, isOn = true, lowOpacity }) => {
+export const LogoBox = ({ image, isOn = true }) => {
   const strobeAnim = useSpring({
     config: {
       tension: 500,
       friction: 130,
       mass: 1
     },
-    opacity: isOn ? (lowOpacity ? 0.8 : 1) : 0
+    opacity: isOn ? 1 : 0
   });
 
-  return <ImageBox image={image} style={strobeAnim} lowOpacity={lowOpacity} />;
+  return <ImageBox image={image} style={strobeAnim} />;
 };

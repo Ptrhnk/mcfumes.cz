@@ -39,17 +39,14 @@ export const LogoLayers = ({}) => {
       <LogoBox
         image={require("../../public/img/logo-layers/LayerHandBlue.png")}
         isOn={flipArr[0]}
-        // lowOpacity
       />
       <LogoBox
         image={require("../../public/img/logo-layers/LayerHandRed.png")}
         isOn={flipArr[1]}
-        // lowOpacity
       />
       <LogoBox
         image={require("../../public/img/logo-layers/LayerHandColors.png")}
         isOn={flipArr[2]}
-        // lowOpacity
       />
     </LogoLayersContainer>
   );

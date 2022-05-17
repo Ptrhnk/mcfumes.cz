@@ -50,7 +50,7 @@ export default function Home() {
         {/* <LogoBox image={require("../public/img/defumezlogo.jpeg")} /> */}
         <LogoLayers />
         {/* <TitleBoxLetterFlash text="28.5.2022 BIGYFEST LIVEBAND / FUHA!!!!!!!!!!!!!!!!!" /> */}
-        <TitleBoxTranslate text="28.5.2022 BIGYFEST LIVEBAND / FUHA!!!!!!!!!!!!!!!!!" />
+        <TitleBoxTranslate text="28.5.2022 BIGYFEST LIVEBAND & FUHA!!!!!!!!!!!!!!!!!" />
       </CenterContainer>
     </PageContainer>
   );
