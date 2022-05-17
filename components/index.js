@@ -1,3 +1,4 @@
+import { LogoLayers } from "./LogoLayers/LogoLayers";
 import { LogoBox } from "./LogoBox/LogoBox";
 import { TitleBoxLetterFlash } from "./TitleBox/TitleBoxLetterFlash";
 import { TitleLetter } from "./TitleLetter/TitleLetter";
@@ -9,5 +10,6 @@ export {
   TitleLetter,
   LogoBox,
   AudioControllPanel,
-  AudioPlayer
+  AudioPlayer,
+  LogoLayers
 };

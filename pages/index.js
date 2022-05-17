@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import styled from "styled-components";
 
-import { LogoBox, TitleBoxLetterFlash } from "components";
+import { LogoBox, TitleBoxLetterFlash, LogoLayers } from "components";
 
 const PageContainer = styled.div`
   position: fixed;
@@ -33,6 +33,7 @@ const CenterContainer = styled.div`
   height: 100rem;
   /* border: 1px solid white; */
 `;
+
 export default function Home() {
   return (
     <PageContainer>
@@ -40,12 +41,9 @@ export default function Home() {
         <title>MC Fumes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <img
-        src={require("../public/img/defumezlogo.jpeg")}
-        style={{ width: "350px" }}
-      /> */}
       <CenterContainer>
-        <LogoBox image={require("../public/img/defumezlogo.jpeg")} />
+        {/* <LogoBox image={require("../public/img/defumezlogo.jpeg")} /> */}
+        <LogoLayers />
         <TitleBoxLetterFlash text="28.5.2022 BIGYFEST LIVEBAND / FUHA!!!!!!!!!!!!!!!!!" />
       </CenterContainer>
     </PageContainer>

@@ -6,6 +6,7 @@ const ImageBox = styled.div`
   max-height: 55rem;
   max-width: 100%;
   width: 100rem;
+  position: absolute;
   /* border: 1px dashed hotpink; */
 
   background-image: ${({ image }) => (image ? `url(${image})` : "none")};
