@@ -21,9 +21,9 @@ const ImageBox = styled(animated.div)`
 export const LogoBox = ({ image, isOn = true, lowOpacity }) => {
   const strobeAnim = useSpring({
     config: {
-      tension: 250,
-      friction: 150,
-      mass: 2
+      tension: 500,
+      friction: 130,
+      mass: 1
     },
     opacity: isOn ? (lowOpacity ? 0.8 : 1) : 0
   });

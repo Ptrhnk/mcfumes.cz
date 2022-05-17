@@ -22,7 +22,7 @@ export const LogoLayers = ({}) => {
     setTimeout(() => {
       flipArr[index] = !flipArr[index];
       setFlipArr(flipArr.slice());
-    }, Math.floor(Math.random() * 100 + 1200));
+    }, Math.floor(Math.random() * 100 + 800));
   };
 
   return (
