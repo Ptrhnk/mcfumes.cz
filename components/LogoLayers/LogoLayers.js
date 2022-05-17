@@ -8,46 +8,48 @@ const LogoLayersContainer = styled.div`
   max-height: 55rem;
   max-width: 100%;
   width: 100rem;
+
+  /* border: 1px dashed white; */
 `;
 
 export const LogoLayers = ({}) => {
-  const [flipArr, setFlipArr] = useState(Array(6).fill(true));
+  const [flipArr, setFlipArr] = useState(Array(4).fill(true));
 
-  useEffect(() => void setInterval(() => alternate(), 100), []);
+  useEffect(() => void setInterval(() => alternate(), 170), []);
 
   const alternate = () => {
     const index = Math.floor(Math.random() * flipArr.length);
     setTimeout(() => {
       flipArr[index] = !flipArr[index];
       setFlipArr(flipArr.slice());
-    }, Math.floor(Math.random() * 100 + 400));
+    }, Math.floor(Math.random() * 100 + 1200));
   };
 
   return (
     <LogoLayersContainer>
       {/* <LogoBox
         image={require("../../public/img/logo-layers/BackgroundWhite.png")}
-        isOn={flipArr[0]}
-      /> */}
-      {/* <LogoBox
-        image={require("../../public/img/logo-layers/BackgroundFront.png")}
-        isOn={flipArr[2]}
-      /> */}
-      {/* <LogoBox
+      />
+      <LogoBox
         image={require("../../public/img/logo-layers/LayerHeading.png")}
-        isOn={flipArr[2]}
+      />
+      <LogoBox
+        image={require("../../public/img/logo-layers/BackgroundFront.png")}
       /> */}
       <LogoBox
         image={require("../../public/img/logo-layers/LayerHandBlue.png")}
-        isOn={flipArr[3]}
+        isOn={flipArr[0]}
+        // lowOpacity
       />
       <LogoBox
         image={require("../../public/img/logo-layers/LayerHandRed.png")}
-        isOn={flipArr[4]}
+        isOn={flipArr[1]}
+        // lowOpacity
       />
       <LogoBox
         image={require("../../public/img/logo-layers/LayerHandColors.png")}
-        isOn={flipArr[5]}
+        isOn={flipArr[2]}
+        // lowOpacity
       />
     </LogoLayersContainer>
   );

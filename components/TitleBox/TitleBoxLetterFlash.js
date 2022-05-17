@@ -1,24 +1,6 @@
 import { TitleLetter } from "components";
 import React, { useEffect, useState } from "react";
-
-import styled from "styled-components";
-
-const Title = styled.h1`
-  display: flex;
-  flex-direction: row;
-`;
-const StyledTitleBox = styled.div`
-  margin-top: 4rem;
-  /* @media (max-width: 900px) {
-    margin-top: 3.5rem;
-  } */
-  /* @media (max-height: 500px) {
-    font-size: 2.2rem;
-  } */
-  /* @media (max-width: 700px) {
-    font-size: 2.5rem;
-  } */
-`;
+import { StyledTitle, StyledTitleBox } from "./TitleBoxStyles";
 
 export const TitleBoxLetterFlash = ({ text }) => {
   const [flipArr, setFlipArr] = useState(Array(text.length).fill(true));
@@ -39,11 +21,11 @@ export const TitleBoxLetterFlash = ({ text }) => {
 
   return (
     <StyledTitleBox>
-      <Title>
+      <StyledTitle>
         {text?.split("").map((letter, key) => {
           return <TitleLetter key={key} letter={letter} isOn={flipArr[key]} />;
         })}
-      </Title>
+      </StyledTitle>
     </StyledTitleBox>
   );
 };
