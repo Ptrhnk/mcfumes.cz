@@ -46,7 +46,7 @@ export default function Home() {
       /> */}
       <CenterContainer>
         <LogoBox image={require("../public/img/defumezlogo.jpeg")} />
-        <TitleBox text="Coming soon..." />
+        <TitleBox text="28.5.2022 BIGYFEST LIVEBAND / FUHA!!!!!!!!!!!!!!!!!" />
       </CenterContainer>
     </PageContainer>
   );

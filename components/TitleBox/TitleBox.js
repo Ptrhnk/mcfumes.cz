@@ -23,7 +23,7 @@ const StyledTitleBox = styled.div`
 export const TitleBox = ({ text }) => {
   const [flipArr, setFlipArr] = useState(Array(text.length).fill(true));
 
-  useEffect(() => void setInterval(() => flash(), 170), []);
+  // useEffect(() => void setInterval(() => flash(), 170), []);
 
   const flash = () => {
     const index = Math.floor(Math.random() * flipArr.length);
