@@ -1,6 +1,6 @@
 import { LogoBox } from "components";
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const LogoLayersContainer = styled.div`
   position: relative;
@@ -12,6 +12,20 @@ const LogoLayersContainer = styled.div`
   /* border: 1px dashed white; */
 `;
 
+const flashing = keyframes`
+   0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+`;
 const StyledHeadingBox = styled.div`
   position: absolute;
   background-image: ${({ image }) => (image ? `url(${image})` : "none")};
@@ -21,6 +35,8 @@ const StyledHeadingBox = styled.div`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+
+  /* animation: ${flashing} 2s infinite; */
 `;
 
 export const LogoLayers = ({}) => {

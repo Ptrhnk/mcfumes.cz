@@ -41,6 +41,6 @@ export const StyledTitleBox = styled.div`
 `;
 
 export const StyledTransformingTitle = styled(animated.h1)`
-  animation: ${moving} 7s infinite linear reverse;
+  animation: ${moving} 12s infinite linear reverse;
   font-size: 3.7rem;
 `;
