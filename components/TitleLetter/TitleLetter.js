@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useSpring, config, animated } from "react-spring";
 
-const StyledLetter = styled(animated.h2)`
+const StyledLetter = styled(animated.p)`
   opacity: ${({ $show }) => ($show ? "1" : "0")};
   min-width: 1rem;
   font-size: 3.5rem;

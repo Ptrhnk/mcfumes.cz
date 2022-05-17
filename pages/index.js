@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import styled from "styled-components";
 
-import { LogoBox, TitleBox } from "components";
+import { LogoBox, TitleBoxLetterFlash } from "components";
 
 const PageContainer = styled.div`
   position: fixed;
@@ -46,7 +46,7 @@ export default function Home() {
       /> */}
       <CenterContainer>
         <LogoBox image={require("../public/img/defumezlogo.jpeg")} />
-        <TitleBox text="28.5.2022 BIGYFEST LIVEBAND / FUHA!!!!!!!!!!!!!!!!!" />
+        <TitleBoxLetterFlash text="28.5.2022 BIGYFEST LIVEBAND / FUHA!!!!!!!!!!!!!!!!!" />
       </CenterContainer>
     </PageContainer>
   );

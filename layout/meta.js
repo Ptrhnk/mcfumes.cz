@@ -1,6 +1,7 @@
 export default () => (
   <>
     <meta itemProp="name" content="MC Fumes" />
+    <meta http-equiv="content-language" content="cs" />
     <meta
       itemProp="image"
       content="http://letiste.airforceproduction.cz/og_image_square.png"

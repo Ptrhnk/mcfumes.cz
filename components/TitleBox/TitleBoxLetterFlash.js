@@ -20,7 +20,7 @@ const StyledTitleBox = styled.div`
   } */
 `;
 
-export const TitleBox = ({ text }) => {
+export const TitleBoxLetterFlash = ({ text }) => {
   const [flipArr, setFlipArr] = useState(Array(text.length).fill(true));
 
   // useEffect(() => void setInterval(() => flash(), 170), []);
